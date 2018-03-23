@@ -1,7 +1,7 @@
 rm(list = ls())
 
 setwd("C:/Users/Clover/Desktop/DSS_Capstone/final/en_US")
-library(RWeka);library(SnowballC);library(tm);library(caret);library(quanteda)
+library(RWeka);library(SnowballC);library(tm)
 
 
 twitter <- readLines("en_US.twitter.txt", encoding="UTF-8")
@@ -10,23 +10,25 @@ news <- readLines("en_US.news.txt", encoding="UTF-8")
 
 set.seed(111)
 
-twitter_sample <- sample(twitter, .01*length(twitter))
+
+
+twitter_sample <- sample(twitter, .02*length(twitter))
 fileConn<-file("twitter_sample.txt")
 writeLines(twitter_sample, fileConn)
 close(fileConn)
 
-blogs_sample <- sample(blogs, .01*length(blogs))
+blogs_sample <- sample(blogs, .02*length(blogs))
 fileConn<-file("blogs_sample.txt")
 writeLines(blogs_sample, fileConn)
 close(fileConn)
 
-news_sample <- sample(news, .01*length(news))
+news_sample <- sample(news, .02*length(news))
 fileConn<-file("news_sample.txt")
 writeLines(news_sample, fileConn)
 close(fileConn)
 
 sample.corpus <- c(twitter_sample,blogs_sample,news_sample)
-sample.corpus <- Corpus(VectorSource(list(sample.corpus)))
+sample.corpus <- c(SampleTwitter, SampleBlog, SampleNews)
 #str(sample.corpus)
 
 
