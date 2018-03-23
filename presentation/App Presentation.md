@@ -11,7 +11,7 @@ autosize: true
 Overview
 ========================================================
 
-The Shiny App is avaiable [here](https://benstraub.shinyapps.io/capstone_text_prediction_app/).  Please check out if you haven't alrady!
+The Shiny App is avaiable [here](https://benstraub.shinyapps.io/capstone_text_prediction_app/).  Please check out if you haven't already!
 
 - The App attempts to predict the next word in a sentence or phrase that you are typing.
 - The App is similar to how smartphones do text prediction.
